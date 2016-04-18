@@ -16,7 +16,7 @@ const engine = require('..');
 describe('index', function() {
   it('编译模板并使用', function() {
     const tpl = '{{name}}';
-    const fn = engine.compile(tpl, {});
+    const fn = engine.compile(tpl);
     fn({ name: 'plover' }).should.equal('plover');
   });
 
