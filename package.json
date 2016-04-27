@@ -1,6 +1,6 @@
 {
   "name": "plover-arttemplate",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "请输入关于此模块的介绍",
   "main": "lib/index",
   "scripts": {
