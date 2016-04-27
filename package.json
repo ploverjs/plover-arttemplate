@@ -27,6 +27,9 @@
     "plover-util": "~1.2.1",
     "should": "~8.3.1"
   },
+  "plover": {
+    "plugin": "lib/plugin"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/plover-modules/plover-arttemplate.git"
