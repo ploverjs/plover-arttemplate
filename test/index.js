@@ -14,14 +14,14 @@ const engine = require('..');
 
 
 describe('index', function() {
-  it('编译模板并使用', function() {
+  it('编译模板并渲染', function() {
     const tpl = '{{name}}';
     const fn = engine.compile(tpl);
     fn({ name: 'plover' }).should.equal('plover');
   });
 
 
-  it('debug方式并编译出模板方便调试', function() {
+  it('开发方式下会编译出模板方便调试', function() {
     const path = pathUtil.join(__dirname, 'fixtures/t1.art');
     const outpath = '.' + path + '.js';
     const tpl = fs.readFileSync(path, 'utf-8');
@@ -30,7 +30,7 @@ describe('index', function() {
     }
 
     engine.compile(tpl, { development: true, path: path });
-    fs.existsSync(path).should.be.true;
+    fs.existsSync(path).should.be.true();
     fs.unlink(outpath);
   });
 
@@ -38,7 +38,7 @@ describe('index', function() {
   it('使用art模板语言的各种功能', function() {
     const path = pathUtil.join(__dirname, 'fixtures/t2.art');
     const tpl = fs.readFileSync(path, 'utf-8');
-    const fn = engine.compile(tpl, {});
+    const fn = engine.compile(tpl);
     const context = {
       name: 'Plover',
       version: '1.0.1',
@@ -51,7 +51,9 @@ describe('index', function() {
       version: '0.1.0'
     };
 
-    fn(context).should.be.type('string');
+    const outpath = pathUtil.join(__dirname, 'fixtures/t2.out');
+    fn(context).replace(/\s+/g, ' ').should
+      .equal(fs.readFileSync(outpath, 'utf-8').replace(/\s+/g, ' '));
   });
 
 
