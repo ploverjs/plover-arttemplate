@@ -58,3 +58,18 @@ var k = 123
 <div class="item-\{{ id \}}">
   a=\{{ a \}}, b=\{{ b \}}
 </div>
+
+
+{{// helper }}
+{{format(123, '元')}}
+
+{{// range }}
+{{each $range(5) as index }}
+  {{index}}
+{{/each}}
+
+
+{{! var list = $range(5, 1, 2) }}
+{{each list as item}}
+{{item}}
+{{/each}}

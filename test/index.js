@@ -51,6 +51,10 @@ describe('index', function() {
       version: '0.1.0'
     };
 
+    context.format = function(v, postfix) {
+      return v + postfix;
+    };
+
     const outpath = pathUtil.join(__dirname, 'fixtures/t2.out');
     fn(context).replace(/\s+/g, ' ').should
       .equal(fs.readFileSync(outpath, 'utf-8').replace(/\s+/g, ' '));
