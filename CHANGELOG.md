@@ -1,3 +1,13 @@
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/plover-modules/plover-arttemplate/compare/v1.1.1...v1.2.0) (2016-06-20)
+
+
+### Features
+
+* 支持根据配置压缩 ([20c63df](https://github.com/plover-modules/plover-arttemplate/commit/20c63df))
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/plover-modules/plover-arttemplate/compare/v1.1.0...v1.1.1) (2016-06-07)
 
