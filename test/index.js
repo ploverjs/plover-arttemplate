@@ -21,20 +21,6 @@ describe('index', function() {
   });
 
 
-  it('开发方式下会编译出模板方便调试', function() {
-    const path = pathUtil.join(__dirname, 'fixtures/t1.art');
-    const outpath = '.' + path + '.js';
-    const tpl = fs.readFileSync(path, 'utf-8');
-    if (fs.existsSync(path)) {
-      fs.unlink(outpath);
-    }
-
-    engine.compile(tpl, { development: true, path: path });
-    fs.existsSync(path).should.be.true();
-    fs.unlink(outpath);
-  });
-
-
   it('使用art模板语言的各种功能', function() {
     const path = pathUtil.join(__dirname, 'fixtures/t2.art');
     const tpl = fs.readFileSync(path, 'utf-8');
