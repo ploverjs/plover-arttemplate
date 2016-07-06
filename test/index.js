@@ -71,20 +71,32 @@ describe('index', function() {
       GHI
     `;
     const fn = engine.compile(tpl);
-    const async = function(value) {
-      return Promise.resolve(value);
-    };
 
     return co(function* () {
       const html = yield* fn({ async: async });
       const expect = `
       ABC
-      &lt;div&gt;
+      async &lt;div&gt;
       DEF
-      <div>
+      async <div>
       GHI
       `;
       html.trim().should.equal(expect.trim());
     });
   });
+
+
+  it('coverage async', function() {
+    const tpl = '{{async(123)}}';
+    const fn = engine.compile(tpl);
+    return co(function* () {
+      const html = yield* fn({ async: async });
+      html.should.equal('async 123');
+    });
+  });
 });
+
+
+function async(value) {
+  return Promise.resolve('async ' + value);
+}
