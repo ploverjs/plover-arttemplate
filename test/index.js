@@ -6,22 +6,28 @@ const SafeString = require('plover-util/lib/safe-string');
 
 const fs = require('fs');
 const pathUtil = require('path');
-const engine = require('..');
+const co = require('co');
+const Engine = require('..');
 
+
+const engine = new Engine();
 
 
 /* global __dirname */
 
 
 describe('index', function() {
-  it('编译模板并渲染', function() {
+  it('compile template for render', function() {
     const tpl = '{{name}}';
     const fn = engine.compile(tpl);
-    fn({ name: 'plover' }).should.equal('plover');
+    return co(function* () {
+      const text = yield* fn({ name: 'plover' });
+      text.should.equal('plover');
+    });
   });
 
 
-  it('使用art模板语言的各种功能', function() {
+  it('use art template features', function() {
     const path = pathUtil.join(__dirname, 'fixtures/t2.art');
     const tpl = fs.readFileSync(path, 'utf-8');
     const fn = engine.compile(tpl);
@@ -42,15 +48,57 @@ describe('index', function() {
     };
 
     const outpath = pathUtil.join(__dirname, 'fixtures/t2.out');
-    fn(context).replace(/\s+/g, ' ').should
-      .equal(fs.readFileSync(outpath, 'utf-8').replace(/\s+/g, ' '));
+    return co(function* () {
+      const text = yield* fn(context);
+      text.replace(/\s+/g, ' ').should
+        .equal(fs.readFileSync(outpath, 'utf-8').replace(/\s+/g, ' '));
+    });
   });
 
 
-  it('编译失败出异常', function() {
+  it('comple error should throw', function() {
     const tpl = '{{each list as item}}';
     (function() {
       engine.compile(tpl, {});
     }).should.throw();
   });
+
+
+  it('with async feature', function() {
+    const tpl = `
+      ABC
+      {{async('<div>')}}
+      DEF
+      {{=async('<div>')}}
+      GHI
+    `;
+    const fn = engine.compile(tpl);
+
+    return co(function* () {
+      const html = yield* fn({ async: async });
+      const expect = `
+      ABC
+      async &lt;div&gt;
+      DEF
+      async <div>
+      GHI
+      `;
+      html.trim().should.equal(expect.trim());
+    });
+  });
+
+
+  it('coverage async', function() {
+    const tpl = '{{async(123)}}';
+    const fn = engine.compile(tpl);
+    return co(function* () {
+      const html = yield* fn({ async: async });
+      html.should.equal('async 123');
+    });
+  });
 });
+
+
+function async(value) {
+  return Promise.resolve('async ' + value);
+}

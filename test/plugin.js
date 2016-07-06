@@ -13,7 +13,8 @@ describe('plugin', function() {
     const app = plover({
       applicationRoot: pathUtil.join(__dirname, 'fixtures/app'),
       arttemplate: {
-        compress: true
+        compress: true,
+        async: false
       }
     });
 
