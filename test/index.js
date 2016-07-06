@@ -7,8 +7,10 @@ const SafeString = require('plover-util/lib/safe-string');
 const fs = require('fs');
 const pathUtil = require('path');
 const co = require('co');
-const engine = require('..');
+const Engine = require('..');
 
+
+const engine = new Engine();
 
 
 /* global __dirname */
