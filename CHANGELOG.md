@@ -1,3 +1,19 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/plover-modules/plover-arttemplate/compare/v1.2.0...v2.0.0) (2016-07-06)
+
+
+### Bug Fixes
+
+* 修复Promise返回非字符串类型结果 ([0134066](https://github.com/plover-modules/plover-arttemplate/commit/0134066))
+
+
+### Features
+
+* add async feature ([9b96dfa](https://github.com/plover-modules/plover-arttemplate/commit/9b96dfa))
+* compatible with plover < 2.5 ([cbe7e82](https://github.com/plover-modules/plover-arttemplate/commit/cbe7e82))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/plover-modules/plover-arttemplate/compare/v1.1.1...v1.2.0) (2016-06-20)
 
