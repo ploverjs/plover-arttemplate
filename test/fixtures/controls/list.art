@@ -1,0 +1,6 @@
+<h1>Books</h1>
+<ul>
+{{each books as book}}
+  {{$render('item', { book: book })}}
+{{/each}}
+</ul>

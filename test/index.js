@@ -56,7 +56,7 @@ describe('index', function() {
   });
 
 
-  it('comple error should throw', function() {
+  it('compile error should throw', function() {
     const tpl = '{{each list as item}}';
     (function() {
       engine.compile(tpl, {});
@@ -85,6 +85,21 @@ describe('index', function() {
       `;
       html.trim().should.equal(expect.trim());
     });
+  });
+
+
+  it('$render(name) - render control', function() {
+    const path = pathUtil.join(__dirname, 'fixtures/controls/list.art');
+    const tpl = fs.readFileSync(path, 'utf-8');
+    const render = engine.compile(tpl, { path: path, async: false });
+    const data = {
+      books: ['book a', 'book b', 'book c']
+    };
+    const html = render(data);
+
+    const expect = fs.readFileSync(
+        pathUtil.join(__dirname, 'fixtures/controls/expect.html'), 'utf-8');
+    html.should.equal(expect);
   });
 
 
