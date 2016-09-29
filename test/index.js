@@ -11,6 +11,7 @@ const Engine = require('..');
 
 
 const engine = new Engine();
+const asyncEngine = new Engine({ async: true });
 
 
 /* global __dirname */
@@ -20,10 +21,8 @@ describe('index', function() {
   it('compile template for render', function() {
     const tpl = '{{name}}';
     const fn = engine.compile(tpl);
-    return co(function* () {
-      const text = yield* fn({ name: 'plover' });
-      text.should.equal('plover');
-    });
+    const text = fn({ name: 'plover' });
+    text.should.equal('plover');
   });
 
 
@@ -48,11 +47,9 @@ describe('index', function() {
     };
 
     const outpath = pathUtil.join(__dirname, 'fixtures/t2.out');
-    return co(function* () {
-      const text = yield* fn(context);
-      text.replace(/\s+/g, ' ').should
-        .equal(fs.readFileSync(outpath, 'utf-8').replace(/\s+/g, ' '));
-    });
+    const text = fn(context);
+    text.replace(/\s+/g, ' ').should
+      .equal(fs.readFileSync(outpath, 'utf-8').replace(/\s+/g, ' '));
   });
 
 
@@ -72,7 +69,7 @@ describe('index', function() {
       {{=async('<div>')}}
       GHI
     `;
-    const fn = engine.compile(tpl);
+    const fn = asyncEngine.compile(tpl);
 
     return co(function* () {
       const html = yield* fn({ async: async });
@@ -90,9 +87,9 @@ describe('index', function() {
 
   it('coverage async', function() {
     const tpl = '{{async(123)}}';
-    const fn = engine.compile(tpl);
+    const fn = asyncEngine.compile(tpl);
     return co(function* () {
-      const html = yield* fn({ async: async });
+      const html = yield fn({ async: async });
       html.should.equal('async 123');
     });
   });
