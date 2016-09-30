@@ -2,6 +2,11 @@
 # [2.1.0](https://github.com/plover-modules/plover-arttemplate/compare/v2.0.0...v2.1.0) (2016-09-30)
 
 
+### Performance Improvements
+
+* $each性能优化 ([e05ee15](https://github.com/plover-modules/plover-arttemplate/commit/e05ee15))
+
+
 
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/plover-modules/plover-arttemplate/compare/v1.2.0...v2.0.0) (2016-07-06)
