@@ -1,3 +1,13 @@
+<a name="3.0.0"></a>
+# [3.0.0](https://github.com/plover-modules/plover-arttemplate/compare/v2.1.0...v3.0.0) (2016-09-30)
+
+
+### Features
+
+* 将api改成普通方式，不再使用GeneratorFunction ([94bc9d2](https://github.com/plover-modules/plover-arttemplate/commit/94bc9d2))
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/plover-modules/plover-arttemplate/compare/v2.0.0...v2.1.0) (2016-09-30)
 
