@@ -1,3 +1,13 @@
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/plover-modules/plover-arttemplate/compare/v1.2.0...v1.3.0) (2016-09-30)
+
+
+### Performance Improvements
+
+* 提高each性能 ([87eaa14](https://github.com/plover-modules/plover-arttemplate/commit/87eaa14))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/plover-modules/plover-arttemplate/compare/v1.1.1...v1.2.0) (2016-06-20)
 
