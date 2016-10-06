@@ -36,12 +36,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/plover-modules/plover-arttemplate.git"
+    "url": "git+https://github.com/ploverjs/plover-arttemplate.git"
   },
   "author": "bencode@163.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/plover-modules/plover-arttemplate/issues"
+    "url": "https://github.com/ploverjs/plover-arttemplate/issues"
   },
-  "homepage": "https://github.com/plover-modules/plover-arttemplate#readme"
+  "homepage": "https://github.com/ploverjs/plover-arttemplate#readme"
 }
