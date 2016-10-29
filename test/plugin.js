@@ -2,34 +2,20 @@
 
 
 const pathUtil = require('path');
-const plover = require('plover');
-const request = require('supertest');
-
-const plugin = require('../lib/plugin');
+const mm = require('plover-test-mate');
 
 
-describe('plugin', function() {
-  it('test', function() {
-    const app = plover({
-      applicationRoot: pathUtil.join(__dirname, 'fixtures/app'),
-      arttemplate: {
-        compress: true,
-        async: false
-      }
-    });
-
-    plugin(app);
-
-    const expect =
-`<div>
-Hello
-<ul>
-<li>item</li>
-</ul>
-</div>
-`;
-
-    return request(app.callback())
-      .get('/').expect(expect);
+describe('plugin', () => {
+  const app = mm({
+    applicationRoot: pathUtil.join(__dirname, 'fixtures/app'),
+    expectRoot: pathUtil.join(__dirname, 'fixtures/expect'),
+    arttemplate: {
+      compress: true,
+      async: false
+    }
   });
+
+  app.use(require('../lib/plugin'));
+
+  app.it('/', 'index.html');
 });
