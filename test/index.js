@@ -33,7 +33,9 @@ describe('index', function() {
     const context = {
       name: 'Plover',
       version: '1.0.1',
-      keywords: ['framework', 'koa', 'es6']
+      keywords: ['framework', 'koa', 'es6'],
+      tag: 'b',
+      showIndexInPage: 1
     };
 
     context.o = new SafeString('<h1>hello world</h1>');

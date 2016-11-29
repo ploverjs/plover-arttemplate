@@ -4,6 +4,15 @@
 {{// 非转义输入 }}
 {{=version}}
 
+{{// 判断语句}}
+{{if tag == 'a'}}
+  A
+{{else if tag == 'b'}}
+  B
+{{else}}
+  C
+{{/if}}
+
 {{// 循环语句 }}
 {{each keywords as keyword}}
   {{keyword}}
@@ -73,3 +82,14 @@ var k = 123
 {{each list as item}}
 {{item}}
 {{/each}}
+
+
+{{!
+  // 注释在语句中
+  var a = 1;
+  if (!showIndexInPage < 2) {
+    // 首屏直接显示220图片
+    a = 2;
+  }
+}}
+{{a}}
