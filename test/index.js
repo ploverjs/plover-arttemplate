@@ -95,6 +95,19 @@ describe('index', function() {
       html.should.equal('async 123');
     });
   });
+
+
+  it('with helpers', function() {
+    const helpers = {
+      formatPrice: function(v) {
+        return v.toFixed(2) + '元';
+      }
+    };
+    const art = new Engine({ helpers: helpers });
+    const tpl = '{{formatPrice price}}';
+    const fn = art.compile(tpl);
+    fn({ price: 1 / 3 }).should.equal('0.33元');
+  });
 });
 
 
