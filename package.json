@@ -1,6 +1,6 @@
 {
   "name": "plover-arttemplate",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "description": "【模板引擎插件】接入[artTemplate](https://github.com/aui/artTemplate)",
   "main": "lib/index",
   "scripts": {

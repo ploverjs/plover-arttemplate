@@ -1,3 +1,13 @@
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/ploverjs/plover-arttemplate/compare/v3.0.1...v3.1.0) (2016-12-20)
+
+
+### Bug Fixes
+
+* 修复helpers接入 ([ab1d5c2](https://github.com/ploverjs/plover-arttemplate/commit/ab1d5c2))
+
+
+
 <a name="3.0.1"></a>
 ## [3.0.1](https://github.com/ploverjs/plover-arttemplate/compare/v3.0.0...v3.0.1) (2016-11-29)
 
