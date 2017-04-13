@@ -113,9 +113,9 @@ describe('index', function() {
     const config = {
       compress: true,
       async: true,
-      openTag: "<%",
-      closeTag: "%>"
-    }
+      openTag: '<%',
+      closeTag: '%>'
+    };
     const art = new Engine(config);
     const tpl = '<% hello %>';
     const fn = art.compile(tpl);
