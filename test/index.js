@@ -108,6 +108,19 @@ describe('index', function() {
     const fn = art.compile(tpl);
     fn({ price: 1 / 3 }).should.equal('0.33元');
   });
+
+  it('config art', function() {
+    const config = {
+      compress: true,
+      async: true,
+      openTag: "<%",
+      closeTag: "%>"
+    }
+    const art = new Engine(config);
+    const tpl = '<% hello %>';
+    const fn = art.compile(tpl);
+    fn({ hello: 'hello plover' }).should.equal('hello plover');
+  });
 });
 
 
