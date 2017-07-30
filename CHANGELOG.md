@@ -1,3 +1,12 @@
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/ploverjs/plover-arttemplate/compare/v3.1.0...v3.2.0) (2017-07-30)
+
+
+### Features
+
+* publish for 传入并配置 arttemplate config ([eeaa571](https://github.com/ploverjs/plover-arttemplate/commit/eeaa571))
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/ploverjs/plover-arttemplate/compare/v3.0.1...v3.1.0) (2016-12-20)
 
