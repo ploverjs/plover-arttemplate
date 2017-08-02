@@ -111,6 +111,7 @@ describe('index', function() {
 
   it('config art', function() {
     const config = {
+      viewExt: 'html',
       compress: true,
       async: true,
       openTag: '<%',
