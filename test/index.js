@@ -115,12 +115,15 @@ describe('index', function() {
       compress: true,
       async: true,
       openTag: '<%',
-      closeTag: '%>'
+      closeTag: '%>',
+      beforeCompile: (source)=>{
+        return source + ' !!';
+      }
     };
     const art = new Engine(config);
     const tpl = '<% hello %>';
     const fn = art.compile(tpl);
-    fn({ hello: 'hello plover' }).should.equal('hello plover');
+    fn({ hello: 'hello plover' }).should.equal('hello plover !!');
   });
 });
 
