@@ -1,3 +1,13 @@
+<a name="3.4.0"></a>
+# [3.4.0](https://github.com/ploverjs/plover-arttemplate/compare/v3.3.0...v3.4.0) (2017-08-11)
+
+
+### Features
+
+* add before compile ([80d62f3](https://github.com/ploverjs/plover-arttemplate/commit/80d62f3))
+
+
+
 <a name="3.3.0"></a>
 # [3.3.0](https://github.com/ploverjs/plover-arttemplate/compare/v3.1.0...v3.3.0) (2017-08-02)
 
