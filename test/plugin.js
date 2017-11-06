@@ -1,6 +1,3 @@
-'use strict';
-
-
 const pathUtil = require('path');
 const mm = require('plover-test-mate');
 
@@ -15,7 +12,6 @@ describe('plugin', () => {
     }
   });
 
-  app.use(require('../lib/plugin'));
-
+  app.install(require('../lib/plugin'));
   app.it('/', 'index.html');
 });

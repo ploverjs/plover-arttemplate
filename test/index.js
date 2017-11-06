@@ -1,6 +1,3 @@
-'use strict';
-
-
 const SafeString = require('plover-util/lib/safe-string');
 
 
@@ -116,7 +113,7 @@ describe('index', function() {
       async: true,
       openTag: '<%',
       closeTag: '%>',
-      beforeCompile: (source)=>{
+      beforeCompile(source) {
         return source + ' !!';
       }
     };
